@@ -1,204 +1,143 @@
-<<<<<<< HEAD
+
 # Playwright-testing-suite-Assignment-1
-=======
-# IT3040 Assignment 1 – Singlish Transliteration Testing (Playwright Automation)
 
->>>>>>> dba22e0 (Initial commit - Playwright automation project)
----
 
-## 📌 Project Overview
+📌 Project Overview
+This repository contains the automation script and test cases for IT3040 – IT Project Management (Year 3, Semester 1).
+The project focuses on evaluating the accuracy of a Singlish-to-Sinhala transliteration system by executing structured test cases and identifying conversion failures.
+🔗 Tested System: __https://www.pixelssuite.com/chat-translator__
+🎯 Objectives
 
-This project is developed for **IT3040 – IT Project Management (Year 3, Semester 2)**.
+* Evaluate the accuracy of Singlish → Sinhala conversion
+* Identify failure scenarios in transliteration
+* Automate test execution using Playwright
+* Record results directly into an Excel file
+* Analyze inconsistencies in real-time UI behavior
+🛠 Technologies Used
 
-It automates the testing of a **Singlish-to-Sinhala transliteration system** using Playwright and Python.  
-The framework reads test cases from Excel, performs UI automation on the translator web application, captures outputs, compares results, and writes back test status.
-
-🔗 Tested Application:  
-https://www.pixelssuite.com/chat-translator
-
----
-
-## 🎯 Objectives
-
-- Evaluate accuracy of Singlish → Sinhala transliteration
-- Detect incorrect or failed translations
-- Automate UI testing using Playwright (Python)
-- Store test results in Excel
-- Analyze system behavior under different inputs
-
----
-
-## 🛠 Technologies Used
-
-- Python  
-- Playwright  
-- OpenPyXL  
-- Excel (Test Data Source)  
-
----
-
-## 📂 Project Structure
+* Python
+* Playwright (Browser Automation)
+* OpenPyXL (Excel handling)
+📂 Project Structure
 
 ```
-
-IT23367258/
+IT3040_Assignment_1/
 │
-├── test_automation.py
-├── IT23367258_Assignment1_TestCases.xlsx
-├── IT23367258_GitRepoLink.txt
-├── IT23367258_requirements.txt
-├── README.md
+├── test_automation.py              # Main automation script
+├── Assignment1_TestCases.xlsx      # Excel test cases & results
+├── requirements.txt                # Python dependencies
+├── README.md                      # Project documentation
 
-````
+```
 
----
+⚙️ Prerequisites
+Make sure you have:
 
-## ⚙️ Prerequisites
+* Python 3.8+
+* pip (Python package manager)
+* Internet connection
+📥 Installation
+1. Clone Repository
 
-Before running the project, ensure you have:
+```
+git clone <your-repo-link>
+cd <your-project-folder>
+```
 
-- Python 3.8 or above
-- pip installed
-- Stable internet connection
+2. Install Dependencies
 
----
-
-## 📥 Installation Steps
-
-### 1. Open project folder
-Extract the ZIP file and open terminal inside the project folder.
-
-### 2. Install dependencies
-```bash
+```
 pip install -r requirements.txt
-````
-
-### 3. Install Playwright browser
-
-```bash
-python -m playwright install chromium
 ```
 
----
+3. Install Playwright Browsers
 
-## ▶️ How to Run the Automation
-
-Run the script using:
-
-```bash
-python test_automation.py --excel "IT23367258_Assignment1_TestCases.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1
+```
+playwright install chromium
 ```
 
----
+▶️ Running the Automation Script
+Use the following command:
 
-## 📊 Output Results
+```
+python test_automation.py --excel "C:\path\to\Assignment1_TestCases.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1
+```
 
-The Excel file will be updated automatically with:
+📊 Output
 
-* Actual Output (Generated Sinhala Text)
-* Status:
+* Results are written directly into the Excel file:
+   * Actual Output
+   * Status (PASS / FAIL / UI Error / COLLECTED)
+* Script automatically:
+   * Reads test cases
+   * Inputs Singlish text
+   * Captures Sinhala output
+   * Compares results
+🧪 Test Coverage
+✔ Functional Testing
 
-  * PASS
-  * FAIL
-  * UI ERROR
-  * COLLECTED
-
----
-
-## 🧪 Test Coverage
-
-### ✔ Functional Testing
-
-* Sentences and questions
+* Question forms
 * Commands and responses
-* Greetings and conversations
-* Mixed Singlish + English input
-* Numbers, dates, and currency
+* Greetings and casual phrases
+* Mixed Singlish + English inputs
+* Numbers, dates, currency
 * Emojis and symbols
+* Spelling variations
+✔ Negative Testing
 
-### ✔ Negative Testing
+* Incorrect spacing
+* Typographical errors
+* Slang inputs
+* Mixed language complexity
+* Formatting issues
+✔ UI Behavior
 
-* Typing mistakes
-* Spacing errors
-* Slang and informal input
-* Mixed or invalid formats
+* Real-time Sinhala output updates
+* Input/output synchronization
+⚠️ Important Notes
 
-### ✔ UI Testing
-
-* Real-time translation updates
-* Output rendering accuracy
-* UI response timing validation
-
----
-
-## ⚠️ Important Notes
-
-* Strict comparison is used → small differences may result in FAIL
+* Strict comparison is used → Even small differences = FAIL
 * Some failures are expected due to:
+   * Transliteration inconsistencies
+   * Informal Singlish variations
+   * UI timing delays
+* Tests run sequentially to ensure stability
+❗ Troubleshooting
+Script Issues
 
-  * Transliteration limitations
-  * Informal Singlish variations
-  * UI response delay
+* Check Python version:
 
----
+```
+python --version
+```
 
-## ❗ Troubleshooting
+* Reinstall dependencies:
 
-### Install issues
-
-```bash
+```
 pip install -r requirements.txt --force-reinstall
 ```
 
-### Playwright issues
-
-```bash
-python -m playwright install --force chromium
-```
-
-### Common fixes
-
-* No output → increase `--wait-ms`
-* UI delay → increase `--slow-mo-ms`
-
----
-
-## 📦 Submission Instructions
-
-### Step 1: Rename folder
+Playwright Issues
 
 ```
-IT23367258/
+playwright install --force chromium
 ```
 
-### Step 2: Ensure files included
+Common Errors
 
-* test_automation.py
-* Excel test case file
-* requirements.txt
-* Git repo link file
-* README.md
+* No output detected → Increase `--wait-ms`
+* UI not updating → Increase `--slow-mo-ms`
+* Wrong selectors → Website structure may have changed
+👨‍🎓 Student Information
 
-### Step 3: Create ZIP file
-
-```
-IT23367258.zip
-```
-
-### Step 4: Upload to CourseWeb
-
----
-
-## 👨‍🎓 Student Information
-
-* Student ID: IT23367258
+* Student ID: IT23367326
 * Module: IT3040 – IT Project Management
-* Assignment: Assignment 1 (Singlish Transliteration Testing)
+* Assignment: Assignment 1 (Option 1)
+📌 Final Status
+✔ Automation script implemented ✔ Excel-based validation completed ✔ 50+ test cases executed ✔ Failure scenarios identified
+📜 License
+This project is created for academic purposes only.
 
----
 
-## 📜 License
-
-This project is developed for **academic purposes only**.
-
-```
+use this structure and create my readme file for my project dont copy this and use my info
+my IT no is IT23367258 i want to reame directly copy and paste gie all in one
