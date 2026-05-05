@@ -1,6 +1,4 @@
-
-# Playwright-testing-suite-Assignment-1
-
+T3040 Assignment 1 – Singlish Transliteration Testing (Playwright Automation)
 
 📌 Project Overview
 This repository contains the automation script and test cases for IT3040 – IT Project Management (Year 3, Semester 1).
