@@ -174,7 +174,6 @@ playwright install --force chromium
 
 | Field | Details |
 |-------|---------|
-| **Student ID** | IT23367258 |
 | **Module** | IT3040 – IT Project Management |
 | **Assignment** | Assignment 1 (Option 1) |
 
